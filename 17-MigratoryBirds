@@ -1,0 +1,35 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the migratoryBirds function below.
+def migratoryBirds(arr):
+    return max(set(arr), key= arr.count)
+    #OTHER CODE - CORRECT BUT NOT AS EFFICIENT
+    #it=[]
+    #occ=[]
+    #for i in arr:
+     #   o = arr.count(i)
+      #  if o>(len(arr)/2):
+      #      return i
+      #  if i not in it:
+      #      it.append(i)
+      #      occ.append(o)
+    #pos = occ.index(max(occ))
+    #return it[pos]
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = migratoryBirds(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
