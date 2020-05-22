@@ -1,0 +1,52 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the circularArrayRotation function below.
+def circularArrayRotation(a, k, queries):
+    
+    x=[]
+    l=len(a)
+    if k>n:
+        k=k%n
+    one= a[0:l-k]
+    two= a[l-k:l]
+    print(one)
+    print(two)
+    a=[]
+    a= two+one
+    for i in queries:
+        x.append(a[i])        
+        
+        
+    return x
+        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nkq = input().split()
+
+    n = int(nkq[0])
+
+    k = int(nkq[1])
+
+    q = int(nkq[2])
+
+    a = list(map(int, input().rstrip().split()))
+
+    queries = []
+
+    for _ in range(q):
+        queries_item = int(input())
+        queries.append(queries_item)
+
+    result = circularArrayRotation(a, k, queries)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
